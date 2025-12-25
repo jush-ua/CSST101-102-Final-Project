@@ -11,9 +11,7 @@ venv/
 env/
 .env
 
-# Model files (too large for GitHub)
-models/best_burnout_model/model.safetensors
-models/best_burnout_model/*.bin
+# Training checkpoints (too many files, model is saved separately)
 training/logs/checkpoints/
 
 # IDE settings

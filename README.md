@@ -87,8 +87,27 @@ Before embarking upon this noble quest, ensure thy machine possesses:
 - 🐍 **Python 3.8 or higher** - The serpent language
 - 📦 **pip** - The package summoner
 - 💻 **A terminal** - Thy command throne
+- 📁 **Git LFS** - For fetching the large model files (optional but recommended)
 
-### 🧙‍♂️ Step I: Navigate to the Sacred Project Directory
+### 🧙‍♂️ Step I: Clone the Repository with Git LFS
+
+If thou wishest to use the pre-trained model, ensure Git LFS is installed:
+
+```bash
+# Install Git LFS (if not already installed)
+git lfs install
+
+# Clone the repository (LFS files will be fetched automatically)
+git clone https://github.com/ItSnOtNoOkIeBeAr/Academic-Burnout-Prevention-and-Rule-Based-Advisory-System-for-College-Students.git
+cd Academic-Burnout-Prevention-and-Rule-Based-Advisory-System-for-College-Students
+```
+
+*If thou already hast the repository but lacketh the model files:*
+```bash
+git lfs pull
+```
+
+### 🧙‍♂️ Step II: Navigate to the Sacred Project Directory
 
 Open thy terminal (the PowerShell or Command Prompt) and venture forth:
 
@@ -96,7 +115,7 @@ Open thy terminal (the PowerShell or Command Prompt) and venture forth:
 cd "path\to\Burnout_Advisor_Project"
 ```
 
-### 🔮 Step II: Summon the Magical Dependencies
+### 🔮 Step III: Summon the Magical Dependencies
 
 Invoke this incantation to install all required enchantments:
 
@@ -118,6 +137,32 @@ pip install -r requirements.txt
 | `seaborn` | Visualization Sorcery 📈 |
 
 *Patience, noble scholar! This process may taketh a few minutes...* ⏳
+
+---
+
+## 🧠 About the Pre-Trained Model
+
+*This repository includes a pre-trained BERT model stored via Git LFS!* 📦
+
+### 📊 Model Performance
+
+The Oracle hath been trained and achieved these noble metrics:
+
+| 📈 Metric | 🏆 Score |
+|-----------|----------|
+| **Accuracy** | 94.44% |
+| **Precision** | 95.24% |
+| **Recall** | 94.44% |
+| **F1 Score** | 94.41% |
+
+### 🗂️ Model Files (Stored via Git LFS)
+
+| 📁 File | 📏 Size | 📋 Description |
+|---------|---------|----------------|
+| `model.safetensors` | ~440 MB | The trained BERT weights |
+| `training_args.bin` | ~5 KB | Training configuration |
+
+*If thou preferest to train thy own model, see [Training Thy Model](#-training-thy-model) below!*
 
 ---
 
