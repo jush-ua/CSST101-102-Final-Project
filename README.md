@@ -16,6 +16,8 @@
 - [The Castle Structure](#-the-castle-structure)
 - [Summoning the Dependencies](#-summoning-the-dependencies)
 - [How to Embark Upon This Quest](#-how-to-embark-upon-this-quest)
+- [Quick Start Guide](#-quick-start-guide-for-the-impatient-knight-)
+- [The Interactive Oracle Chat](#-the-interactive-oracle-chat)
 - [The Sacred API Scrolls](#-the-sacred-api-scrolls)
 - [Training Thy Model](#-training-thy-model)
 - [The Three Classifications](#-the-three-classifications)
@@ -41,6 +43,7 @@ This grand apparatus combines a **fine-tuned BERT model** (a most learned oracle
 - 📊 **Three-Level Classification** - Healthy, Stressed, and Burnout states
 - 💡 **Rule-Based Advisor** - Personalized recommendations bestowed upon each pilgrim
 - 🚀 **FastAPI Backend** - A RESTful messenger swift as a falcon
+- � **Interactive Chat** - Converse with the Oracle in thy terminal!
 - 📈 **Confidence Scores** - Probability distribution across all classifications
 - 🆘 **Emergency Resources** - Aid for those in dire straits
 - 📝 **Batch Processing** - Analyze multiple entries in a single incantation
@@ -68,6 +71,7 @@ Burnout_Advisor_Project/
 ├── 📂 training/                 # The Training Grounds
 │   └── train_bert.py            # The Knight's Training Regimen
 │
+├── chat.py                      # 💬 The Interactive Oracle Chat
 ├── requirements.txt             # The Spellbook of Dependencies
 └── README.md                    # This Very Scroll Thou Art Reading
 ```
@@ -226,7 +230,72 @@ python main.py
 
 ---
 
-## 📚 The Sacred API Scrolls
+## � The Interactive Oracle Chat
+
+*For those who wish to converse directly with the Oracle!* 🔮
+
+### 🗣️ Starting the Chat Interface
+
+First, ensure the API server is running in a separate terminal:
+
+```bash
+# Terminal 1: Start the server
+cd Burnout_Advisor_Project
+python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
+```
+
+Then, in another terminal, launch the interactive chat:
+
+```bash
+# Terminal 2: Start the chat
+cd Burnout_Advisor_Project
+python chat.py
+```
+
+### 🎮 Chat Commands
+
+| ⌨️ Command | 📋 Description |
+|------------|----------------|
+| *Type thy feelings* | Share thy thoughts and receive wisdom |
+| `help` | Display guidance for the weary |
+| `clear` | Clear the terminal screen |
+| `quit` / `exit` | Depart from the Oracle's presence |
+
+### 📸 Example Conversation
+
+```
+📝 Share thy thoughts, noble scholar:
+> I've been feeling overwhelmed with assignments and can't seem to catch up
+
+🔮 The Oracle is divining thy mental state...
+
+══════════════════════════════════════════════════════════════════════
+🔮 THE ORACLE SPEAKS:
+══════════════════════════════════════════════════════════════════════
+
+🟡 Thy Mental State: **STRESSED**
+📊 Confidence: 58.2%
+⚠️  Risk Level: 🟡 ELEVATED - Some stress indicators present
+
+📈 Probability Distribution:
+   Healthy    [██░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 7.7%
+   Stressed   [█████████████████░░░░░░░░░░░░░] 58.2%
+   Burnout    [██████████░░░░░░░░░░░░░░░░░░░░] 34.0%
+
+💬 Your entry shows signs of academic stress. This is common and manageable.
+
+💡 TOP RECOMMENDATIONS:
+   ⚡ Immediate Action: Address Current Stressors
+   😴 Rest & Recovery: Prioritize Sleep and Rest
+   📅 Time Management: Reorganize Your Schedule
+
+💡 Tip: Step outside for 5 minutes. Fresh air can reset your mind.
+══════════════════════════════════════════════════════════════════════
+```
+
+---
+
+## �📚 The Sacred API Scrolls
 
 ### 🗡️ Endpoints of Power
 

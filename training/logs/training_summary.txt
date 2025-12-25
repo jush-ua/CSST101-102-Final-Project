@@ -1,0 +1,18 @@
+ACADEMIC BURNOUT DETECTION - TRAINING SUMMARY
+==================================================
+
+Date: 2025-12-25 22:12:10
+Model: bert-base-uncased
+Device: cuda
+
+Hyperparameters:
+  - Batch Size: 8
+  - Learning Rate: 2e-05
+  - Epochs: 10
+  - Max Length: 128
+
+Results:
+  - Accuracy: 0.9444
+  - Precision: 0.9524
+  - Recall: 0.9444
+  - F1 Score: 0.9441

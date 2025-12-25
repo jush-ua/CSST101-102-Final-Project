@@ -1,0 +1,33 @@
+# 🏰 Ye Olde Gitignore for Academic Burnout Advisor
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+.env
+
+# Model files (too large for GitHub)
+models/best_burnout_model/model.safetensors
+models/best_burnout_model/*.bin
+training/logs/checkpoints/
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs (keep training summary)
+*.log
