@@ -12,6 +12,7 @@
 ## 📜 Table of Contents
 
 - [The Grand Overview](#-the-grand-overview)
+- [The Arcane Tech Stack](#-the-arcane-tech-stack)
 - [Enchanted Features](#-enchanted-features)
 - [The Castle Structure](#-the-castle-structure)
 - [Summoning the Dependencies](#-summoning-the-dependencies)
@@ -37,13 +38,86 @@ This grand apparatus combines a **fine-tuned BERT model** (a most learned oracle
 
 ---
 
+## 🛠️ The Arcane Tech Stack
+
+*Behold the mystical tools and enchantments that power this grand apparatus!* ⚗️✨
+
+### 🐍 Core Language
+
+| 🔧 Tool | 📋 Description |
+|---------|----------------|
+| ![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white) | The serpent tongue in which all spells are written |
+
+### 🧠 Machine Learning & AI Sorcery
+
+| 🔧 Tool | 📋 Description |
+|---------|----------------|
+| ![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white) | The deep learning forge where models are crafted 🔥 |
+| ![Transformers](https://img.shields.io/badge/🤗_Transformers-4.30+-FFD21E?style=for-the-badge) | The sacred library of BERT and other wise oracles 🤖 |
+| ![BERT](https://img.shields.io/badge/BERT-base--uncased-orange?style=for-the-badge) | The all-knowing transformer, fine-tuned for burnout detection 📚 |
+| ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.2+-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white) | Utilities for metrics, splitting, and evaluation ⚙️ |
+
+### 🚀 Backend & API Framework
+
+| 🔧 Tool | 📋 Description |
+|---------|----------------|
+| ![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=for-the-badge&logo=fastapi&logoColor=white) | The swift falcon that carries REST messages 🦅 |
+| ![Uvicorn](https://img.shields.io/badge/Uvicorn-0.22+-499848?style=for-the-badge) | The ASGI steed that gallops with lightning speed ⚡ |
+| ![Pydantic](https://img.shields.io/badge/Pydantic-2.0+-E92063?style=for-the-badge&logo=pydantic&logoColor=white) | The guardian of data validation and schemas 🛡️ |
+
+### 📊 Data Manipulation & Visualization
+
+| 🔧 Tool | 📋 Description |
+|---------|----------------|
+| ![Pandas](https://img.shields.io/badge/Pandas-2.0+-150458?style=for-the-badge&logo=pandas&logoColor=white) | The data wrangler, master of tables and scrolls 🐼 |
+| ![NumPy](https://img.shields.io/badge/NumPy-1.24+-013243?style=for-the-badge&logo=numpy&logoColor=white) | The mathematical foundation of all computations 🔢 |
+| ![Matplotlib](https://img.shields.io/badge/Matplotlib-3.7+-11557C?style=for-the-badge) | The artist that paints charts and graphs 🎨 |
+| ![Seaborn](https://img.shields.io/badge/Seaborn-0.12+-7DB0BC?style=for-the-badge) | The beautifier of statistical visualizations 📈 |
+
+### 🗃️ Data & Model Storage
+
+| 🔧 Tool | 📋 Description |
+|---------|----------------|
+| ![HuggingFace](https://img.shields.io/badge/🤗_Datasets-2.12+-FFD21E?style=for-the-badge) | The data loading wizardry from HuggingFace 📦 |
+| ![Git LFS](https://img.shields.io/badge/Git_LFS-3.0+-F05032?style=for-the-badge&logo=git&logoColor=white) | The vault keeper for large model files 🏰 |
+| ![Safetensors](https://img.shields.io/badge/Safetensors-0.4+-FF6F00?style=for-the-badge) | The secure format for storing model weights 🔐 |
+
+### 🏗️ Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    🏰 BURNOUT ADVISOR SYSTEM                    │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐         │
+│  │   📝 User   │───▶│  🚀 FastAPI │───▶│  🧠 BERT    │         │
+│  │   Input     │    │   Backend   │    │   Model     │         │
+│  └─────────────┘    └──────┬──────┘    └──────┬──────┘         │
+│                            │                  │                 │
+│                            ▼                  ▼                 │
+│                     ┌─────────────┐    ┌─────────────┐         │
+│                     │  💡 Rule    │◀───│ 🔮 Predict  │         │
+│                     │   Advisor   │    │   Module    │         │
+│                     └──────┬──────┘    └─────────────┘         │
+│                            │                                    │
+│                            ▼                                    │
+│                     ┌─────────────┐                            │
+│                     │  📋 JSON    │                            │
+│                     │  Response   │                            │
+│                     └─────────────┘                            │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
 ## ✨ Enchanted Features
 
 - 🧠 **BERT-Based Classification** - A transformer most wise, fine-tuned for burnout detection
 - 📊 **Three-Level Classification** - Healthy, Stressed, and Burnout states
 - 💡 **Rule-Based Advisor** - Personalized recommendations bestowed upon each pilgrim
 - 🚀 **FastAPI Backend** - A RESTful messenger swift as a falcon
-- � **Interactive Chat** - Converse with the Oracle in thy terminal!
+- 💬 **Interactive Chat** - Converse with the Oracle in thy terminal!
 - 📈 **Confidence Scores** - Probability distribution across all classifications
 - 🆘 **Emergency Resources** - Aid for those in dire straits
 - 📝 **Batch Processing** - Analyze multiple entries in a single incantation
@@ -484,6 +558,34 @@ This project is for educational purposes within the realm of academia.
 🎓 **CSST 101** - Artificial Intelligence Project  
 🏛️ **Laguna State Polytechnic University (LSPU)**  
 📅 3rd Year, 1st Semester  
+
+---
+
+## 🏆 The Guild of Creators
+
+*Hark! These noble souls hath contributed their talents to forge this grand apparatus:*
+
+### ⚔️ Project Architect & Lead Developer
+
+| 👤 Name | 🎭 Role | 📋 Contributions |
+|---------|---------|------------------|
+| **Urrea** | 🏰 Project Creator & Backend Developer | Crafted the entire system from the ground up, designed the architecture, implemented the BERT model training, FastAPI backend, and rule-based advisory engine |
+
+### 🛡️ The Fellowship
+
+| 👤 Name | 🎭 Role | 📋 Contributions |
+|---------|---------|------------------|
+| **Urrea** | ⚙️ Backend Developer | Server architecture, API endpoints, model integration, and the Oracle's wisdom |
+| **Bauyon** | 🎨 Frontend Developer | User interface and experience design |
+| **Pagalanan** | 📜 Documentation | Scrolls, guides, and sacred texts |
+
+---
+
+### 🎖️ Special Recognition
+
+*This project was conceived, designed, and crafted by* ***Urrea*** *— the mastermind behind the Oracle's creation.* 🧙‍♂️✨
+
+*From the initial spark of inspiration to the final incantation, Urrea hath poured countless hours of dedication into bringing this burnout detection system to life. Truly, a knight of code most valiant!* ⚔️🏰
 
 ---
 
