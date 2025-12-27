@@ -6,9 +6,83 @@ Speak thy mind, noble scholar, and receive wise counsel!
 import requests
 import os
 import sys
+import random
 
 # API Configuration
 API_URL = "http://127.0.0.1:8000"
+
+# ============================================
+# MEDIEVAL ROAST MESSAGES
+# ============================================
+
+ROASTS = {
+    "empty": [
+        "💨 Silence?! Doth thou think the Oracle reads minds?! Speak up, ye mute peasant!",
+        "🤐 What is this, a vow of silence?! The Oracle ain't got time for thy shy act!",
+        "👻 Hello?! Anyone home?! Thy message is emptier than a peasant's coin purse!",
+        "🦗 *crickets* ...The Oracle heareth NOTHING! Art thou a ghost?!",
+    ],
+    "too_short": [
+        "🦎 What is this, a message for ANTS?! The Oracle demandeth at least 10 characters! Put some effort in, ye lazy scribe!",
+        "📝 Thy message is shorter than a goblin's attention span! Write MORE!",
+        "🐜 Even a trained flea could write more than THIS pitiful excuse for text!",
+        "✏️ Is thy quill broken?! That's barely a sentence fragment, ye illiterate buffoon!",
+    ],
+    "special_chars": [
+        "🤡 What manner of cryptic runes art these?! Thy keyboard vomit offends the Oracle! Write like a proper scholar, not a cat walking on keys! 🐱⌨️",
+        "🎭 Art thou speaking in ancient curses?! The Oracle needeth WORDS, not hieroglyphics!",
+        "💀 By the bones of my ancestors! This looketh like a wizard sneezed on parchment!",
+        "🌀 Is this some dark sorcery?! Normal letters, peasant! NORMAL LETTERS!",
+    ],
+    "no_words": [
+        "🫥 Thou hast given me NOTHING! Art thou too lazy to form words? Even a village idiot could do better! 😤",
+        "🤦 The Oracle hath seen rocks more eloquent than thee!",
+        "💭 Thy brain and thy message have something in common... THEY'RE BOTH EMPTY!",
+    ],
+    "long_words": [
+        "🤨 By the saints! Thy 'words' art longer than a dragon's tail! Didst thou fall asleep on thy keyboard? Wake up and write properly! 🐉💤",
+        "😴 ZZZZZZ... Oh sorry, I fell asleep reading thy impossibly long gibberish!",
+        "🐍 Thy words slither on forever like a serpent! Break them up, fool!",
+        "📜 This ain't a scroll competition! Write NORMAL sized words!",
+    ],
+    "super_long_word": [
+        "😱 ZOUNDS! A word with {length} letters?! Even the ancient scrolls contain no such abomination! Art thou possessed by a keyboard demon?! 👺",
+        "🤯 {length} CHARACTERS?! My brain doth hurt just looking at this monstrosity!",
+        "📏 That 'word' is {length} letters long! The longest word in mine dictionary is 'supercalifragilisticexpialidocious' and even THAT makes more sense!",
+        "🦕 Thy word is {length} letters! That's longer than a dinosaur's name, and THEY'RE EXTINCT!",
+    ],
+    "no_vowels": [
+        "😵 '{word}' hath NO VOWELS! Dost thou speak in consonant curses?! The Oracle doth not understand thy barbaric grunting! 🗿",
+        "🗣️ '{word}'?! Art thou choking?! Use some vowels, ye vowel-hating barbarian!",
+        "🤢 '{word}' sounds like someone gargling rocks! WHERE ARE THE VOWELS?!",
+        "👅 How dost thou even PRONOUNCE '{word}'?! Thy tongue must be broken!",
+    ],
+    "number_letter_mix": [
+        "🤖 What is this numerical sorcery?! Art thou a malfunctioning automaton?! The Oracle speaketh ENGLISH, not robot gibberish! 🦾",
+        "🔢 L33T SP34K died in 2005! Write like a normal human, ye time-traveling fool!",
+        "💻 Error 404: Real words not found! Stop mixing numbers with letters like a confused calculator!",
+        "🎰 This ain't a lottery ticket! Remove thy random numbers, peasant!",
+    ],
+    "no_common_words": [
+        "🧙‍♂️💢 FORSOOTH! The Oracle hath studied every tongue known to man, yet THIS incomprehensible drivel escapes even my wisdom! Speaketh ENGLISH or begone, thou gibberish-spewing gremlin! 👽",
+        "📚 I've read THOUSANDS of books and NONE of them contain whatever language THIS is supposed to be!",
+        "🌍 The Oracle speaketh 47 languages, but THIS ain't one of them! Try ENGLISH!",
+        "🤷 *flips through dictionary frantically* Nope! None of these 'words' exist! Art thou inventing a new language?!",
+        "🧠 Mine brain cells are committing suicide trying to understand this nonsense!",
+    ],
+    "repeated_patterns": [
+        "🔁 Ah yes, repeating the same nonsense over and over! How... creative. 😒 The Oracle is NOT amused by thy lazy keyboard spam! Put some effort in, ye slothful scribe! 🦥",
+        "🔄 Copy-paste much?! The Oracle can see thy laziness from a mile away!",
+        "♻️ Recycling is good for the environment, but NOT for writing! Stop repeating thyself!",
+        "🦜 Art thou a parrot?! STOP REPEATING! *squawk squawk*",
+    ],
+}
+
+def get_roast(category, **kwargs):
+    """Get a random roast message for a category"""
+    messages = ROASTS.get(category, ["The Oracle is displeased with thy input!"])
+    message = random.choice(messages)
+    return message.format(**kwargs) if kwargs else message
 
 def clear_screen():
     """Clear the terminal screen"""
@@ -20,33 +94,33 @@ def validate_input(text):
     Returns (is_valid, error_message)
     """
     if not text or not text.strip():
-        return False, "💨 Silence?! Doth thou think the Oracle reads minds?! Speak up, ye mute peasant!"
+        return False, get_roast("empty")
     
     text = text.strip()
     
     # Check minimum length
     if len(text) < 10:
-        return False, "🦎 What is this, a message for ANTS?! The Oracle demandeth at least 10 characters! Put some effort in, ye lazy scribe!"
+        return False, get_roast("too_short")
     
     # Check for too many special characters
     special_char_ratio = sum(1 for c in text if not c.isalnum() and not c.isspace()) / len(text)
     if special_char_ratio > 0.3:
-        return False, "🤡 What manner of cryptic runes art these?! Thy keyboard vomit offends the Oracle! Write like a proper scholar, not a cat walking on keys! 🐱⌨️"
+        return False, get_roast("special_chars")
     
     # Split into words
     words = text.split()
     if len(words) == 0:
-        return False, "🫥 Thou hast given me NOTHING! Art thou too lazy to form words? Even a village idiot could do better! 🙄"
+        return False, get_roast("no_words")
     
     # Check average word length
     avg_word_length = sum(len(word) for word in words) / len(words)
     if avg_word_length > 12:
-        return False, "🤨 By the saints! Thy 'words' art longer than a dragon's tail! Didst thou fall asleep on thy keyboard? Wake up and write properly! 🐉💤"
+        return False, get_roast("long_words")
     
     # Check for very long words
     max_word_length = max(len(word) for word in words)
     if max_word_length > 20:
-        return False, f"😱 ZOUNDS! A word with {max_word_length} letters?! Even the ancient scrolls contain no such abomination! Art thou possessed by a keyboard demon?! 👺"
+        return False, get_roast("super_long_word", length=max_word_length)
     
     # Check if words have vowels
     vowels = set('aeiouAEIOU')
@@ -56,7 +130,7 @@ def validate_input(text):
             vowel_count = sum(1 for c in alpha_chars if c in vowels)
             vowel_ratio = vowel_count / len(alpha_chars)
             if vowel_ratio < 0.1:
-                return False, f"😵 '{word[:15]}' hath NO VOWELS! Dost thou speak in consonant curses?! The Oracle doth not understand thy barbaric grunting! 🗿"
+                return False, get_roast("no_vowels", word=word[:15])
     
     # Check for number-letter mixtures
     for word in words:
@@ -64,7 +138,7 @@ def validate_input(text):
             digit_count = sum(1 for c in word if c.isdigit())
             alpha_count = sum(1 for c in word if c.isalpha())
             if digit_count >= 3 and alpha_count >= 3:
-                return False, "🤖 What is this numerical sorcery?! Art thou a malfunctioning automaton?! The Oracle speaketh ENGLISH, not robot gibberish! 🦾"
+                return False, get_roast("number_letter_mix")
     
     # Check for common English words
     common_words = {'i', 'im', 'my', 'me', 'the', 'a', 'an', 'is', 'am', 'are', 'was', 'were', 'be', 
@@ -79,14 +153,14 @@ def validate_input(text):
     common_count = sum(1 for word in lower_words if word in common_words)
     
     if common_count == 0:
-        return False, "🧙‍♂️💢 FORSOOTH! The Oracle hath studied every tongue known to man, yet THIS incomprehensible drivel escapes even my wisdom! Speaketh ENGLISH or begone, thou gibberish-spewing gremlin! 👽"
+        return False, get_roast("no_common_words")
     
     # Check for repeated patterns
     if len(text) > 20:
         for i in range(len(text) - 4):
             pattern = text[i:i+4].lower()
             if text.lower().count(pattern) > 3 and pattern.isalpha():
-                return False, "🔁 Ah yes, repeating the same nonsense over and over! How... creative. 😒 The Oracle is NOT amused by thy lazy keyboard spam! Put some effort in, ye slothful scribe! 🦥"
+                return False, get_roast("repeated_patterns")
     
     return True, None
 
