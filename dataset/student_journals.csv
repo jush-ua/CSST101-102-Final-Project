@@ -1,91 +1,1001 @@
 text,label
-"I'm feeling great today! Finished all my assignments early and had time to hang out with friends. Life is good.",0
-"Had a productive study session at the library. Feeling confident about the upcoming exams.",0
-"Balanced my time well between classes and relaxation. Watched a movie with roommates tonight.",0
-"Joined a new study group and it's really helping me understand the material better.",0
-"Got enough sleep last night and woke up refreshed. Ready to tackle the day!",0
-"Spent the weekend hiking with friends. Feeling recharged and motivated for the week ahead.",0
-"My time management has improved a lot this semester. I feel in control of my schedule.",0
-"Had a great discussion in class today. Really enjoying this subject!",0
-"Cooked a healthy meal and exercised today. Taking care of myself feels rewarding.",0
-"Finished a group project ahead of schedule. Great teamwork with my classmates!",0
-"I have a lot of deadlines coming up and I'm starting to feel the pressure.",1
-"Didn't sleep well last night because I was worried about my grades.",1
-"Feeling a bit overwhelmed with the workload this week. Need to organize my tasks better.",1
-"Had to skip the gym today because of too much homework. Feeling stressed.",1
-"My concentration has been off lately. Hard to focus during lectures.",1
-"Worried about the midterms. I need to study more but there's so much material.",1
-"Feeling anxious about my presentation next week. Hope I can prepare enough.",1
-"Too many group meetings and assignments at the same time. It's getting hectic.",1
-"I've been procrastinating and now everything is piling up. Need to get back on track.",1
-"Feeling the pressure from parents to get good grades. It's stressful sometimes.",1
-"I can't remember the last time I felt relaxed. Everything feels like too much.",2
-"I don't even care about my grades anymore. What's the point of trying so hard?",2
-"Constant headaches and I can't sleep properly. School is destroying my health.",2
-"I broke down crying in my room today. I just can't handle the pressure anymore.",2
-"Skipped classes again because I couldn't get out of bed. Everything feels hopeless.",2
-"I feel completely empty and exhausted. No amount of rest seems to help.",2
-"My friends say I've changed. I've isolated myself because I have no energy for socializing.",2
-"I've been having panic attacks before exams. My body just shuts down.",2
-"I don't recognize myself anymore. I used to love learning but now I dread it.",2
-"Thinking about dropping out because I can't take this anymore. I'm completely burned out.",2
-"Enjoying my creative writing class. It's a nice break from technical subjects.",0
-"Made progress on my research paper today. Feeling accomplished!",0
-"Had coffee with my professor during office hours. Got great advice for my career.",0
-"The semester is going smoothly. I've learned to say no to extra commitments.",0
-"Celebrated finishing finals with friends. Hard work paid off!",0
-"Started a morning routine that helps me stay organized and calm.",0
-"Found a quiet spot in the library that helps me focus better.",0
-"My mental health has improved since I started journaling regularly.",0
-"Taking breaks between study sessions has made me more productive.",0
-"Grateful for supportive friends who help me through tough times.",0
-"Three exams in one week is really testing my limits.",1
-"I keep comparing myself to classmates who seem to have it all together.",1
-"Feeling guilty when I take breaks because there's always more to study.",1
-"The uncertainty about my future career is causing me anxiety.",1
-"I've been eating irregularly because I'm too busy with assignments.",1
-"My sleep schedule is completely messed up from late-night studying.",1
-"Feeling disconnected from my hobbies. No time for anything but school.",1
-"The online classes are making it hard to stay motivated and engaged.",1
-"I'm falling behind in one class and it's affecting my confidence in others.",1
-"Constant notifications about deadlines are giving me anxiety.",1
-"I haven't talked to my family in weeks. I don't have the energy to call them.",2
-"Failed an exam I studied so hard for. What's wrong with me?",2
-"I've lost interest in everything I used to enjoy. Life feels gray.",2
-"My body is constantly tense and I have no appetite. This isn't normal.",2
-"I fantasize about just disappearing and not dealing with any of this.",2
-"Every morning I wake up with dread. I can't remember feeling happy.",2
-"I've started lying to friends about how I'm doing because I'm too exhausted to explain.",2
-"My grades are slipping and I don't even care anymore. I've given up.",2
-"I feel like a failure no matter how hard I try. Nothing is ever enough.",2
-"Physical symptoms are getting worse - chest pain, trembling, constant fatigue. I need help.",2
-"Looking forward to the study abroad program next semester!",0
-"Finally understood that difficult concept in calculus. Small victories matter!",0
-"Had a great workout at the campus gym. Exercise really helps with stress.",0
-"My advisor helped me plan my courses for next year. Feeling more secure about my path.",0
-"Volunteered at a local charity today. Feels good to help others.",0
-"Discovered a new podcast that makes my commute enjoyable.",0
-"Got positive feedback on my essay. My hard work is paying off!",0
-"Spent quality time with my study buddy. We motivate each other.",0
-"The weather was beautiful today and I studied outside. Nature helps me relax.",0
-"Reached out to a classmate who seemed down. Connection matters.",0
-"I'm juggling work and school and it's getting harder to manage both.",1
-"Feeling imposter syndrome in my advanced classes. Everyone seems smarter.",1
-"The pressure to network and build my resume is overwhelming.",1
-"I dread checking my email because there's always more work.",1
-"My perfectionism is making it hard to submit assignments on time.",1
-"Feeling lonely even though I'm surrounded by people on campus.",1
-"The financial stress of tuition is adding to my academic worries.",1
-"I keep getting distracted by social media when I should be studying.",1
-"Group project members aren't pulling their weight. It's frustrating.",1
-"Worried about disappointing my scholarship providers with my grades.",1
-"I've been having nightmares about failing. Can't escape stress even in sleep.",2
-"My relationship ended because I had no time or energy for it. School took everything.",2
-"I went to the health center because my anxiety has become unbearable.",2
-"I'm running on caffeine and barely functioning. This isn't sustainable.",2
-"Sometimes I wonder if I'm cut out for college at all.",2
-"I've become irritable and snap at people I care about. I hate who I'm becoming.",2
-"The thought of next semester fills me with dread. I can't do this again.",2
-"I've been having trouble breathing during stressful moments. My body is breaking down.",2
-"I feel like I'm watching my life fall apart and I can't stop it.",2
-"I reached out to counseling services today. I finally admitted I need professional help.",2
+deadline soon.,1
+happy,0
+easy day.,0
+busy week.,1
+not stressed.,0
+chilling,0
+busy week.,1
+up all night,1
+not stressed!!!,0
+need sleep.,1
+so tired,1
+scared of failing.,1
+collapsing,2
+feeling solid.,0
+finished my hw,0
+collapsing,2
+failed everything.,2
+stressed out.,1
+help me.,2
+anxious!!!,1
+failed everything,2
+so tired,1
+balanced life.,0
+feeling solid,0
+im done.,2
+anxious.,1
+stressed out.,1
+all good,0
+nothing matters,2
+numb.,2
+stressed out.,1
+love this class!!!,0
+i feel great,0
+slept well.,0
+slept well.,0
+stressed out!!!,1
+busy week.,1
+deadline soon.,1
+not stressed.,0
+scared of failing,1
+no energy,2
+ready for the test.,0
+im done,2
+scared of failing.,1
+balanced life!!!,0
+need sleep.,1
+i give up,2
+stressed out.,1
+im good,0
+chilling.,0
+nothing matters.,2
+not stressed.,0
+im good.,0
+so tired.,1
+head hurts.,1
+busy week,1
+cant focus.,1
+rushing.,1
+coffee addict,1
+empty!!!,2
+im done,2
+nothing matters.,2
+doing okay.,0
+numb.,2
+busy week,1
+grinding,1
+so tired.,1
+help me,2
+coffee addict!!!,1
+balanced life!!!,0
+help me.,2
+chilling,0
+im good.,0
+doing okay.,0
+deadline soon,1
+im good.,0
+cant focus.,1
+balanced life!!!,0
+deadline soon.,1
+coffee addict.,1
+nothing matters!!!,2
+stressed out,1
+no energy,2
+hate my life,2
+crying.,2
+coffee addict.,1
+im done,2
+deadline soon,1
+up all night,1
+busy week.,1
+im good.,0
+empty,2
+easy day.,0
+not stressed,0
+need sleep,1
+collapsing,2
+doing okay,0
+im good,0
+empty!!!,2
+chilling,0
+need sleep.,1
+watching netflix!!!,0
+cant do this anymore!!!,2
+crying,2
+deadline soon!!!,1
+balanced life.,0
+head hurts.,1
+rushing.,1
+up all night,1
+so depressed!!!,2
+stressed out,1
+im tired.,1
+easy day.,0
+need sleep!!!,1
+help me,2
+im tired.,1
+cant focus,1
+grinding.,1
+rushing.,1
+so depressed,2
+i feel great,0
+all good.,0
+cant do this anymore.,2
+up all night!!!,1
+love this class,0
+scared of failing,1
+numb.,2
+so tired.,1
+head hurts.,1
+im good.,0
+so tired.,1
+up all night.,1
+slept well,0
+im good,0
+all good.,0
+no energy!!!,2
+anxious!!!,1
+cant do this anymore.,2
+numb.,2
+no energy,2
+chilling.,0
+coffee addict.,1
+stressed out.,1
+not stressed,0
+easy day,0
+im tired,1
+empty,2
+scared of failing.,1
+im tired.,1
+anxious,1
+deadline soon.,1
+easy day.,0
+failed everything.,2
+deadline soon,1
+broken.,2
+balanced life.,0
+failed everything.,2
+help me,2
+all good.,0
+easy day.,0
+im done.,2
+need sleep!!!,1
+up all night,1
+feeling solid.,0
+scared of failing,1
+i give up,2
+too much homework,1
+chilling.,0
+i feel great.,0
+not stressed,0
+rushing,1
+love this class.,0
+empty!!!,2
+too much homework!!!,1
+rushing.,1
+cant do this anymore!!!,2
+scared of failing.,1
+im tired,1
+slept well.,0
+happy,0
+stressed out,1
+cant focus,1
+empty!!!,2
+cant focus,1
+failed everything.,2
+failed everything.,2
+need sleep,1
+help me.,2
+ready for the test,0
+too much homework,1
+crying,2
+help me,2
+all good,0
+so depressed.,2
+not stressed.,0
+stressed out.,1
+feeling solid.,0
+numb,2
+balanced life.,0
+not stressed.,0
+im good.,0
+busy week.,1
+crying.,2
+love this class.,0
+stressed out.,1
+i give up.,2
+scared of failing,1
+help me,2
+love this class.,0
+feeling solid.,0
+love this class,0
+chilling,0
+doing okay.,0
+help me,2
+empty.,2
+failed everything.,2
+failed everything.,2
+im tired!!!,1
+so tired.,1
+failed everything,2
+im done!!!,2
+i feel great,0
+too much homework!!!,1
+broken.,2
+so depressed,2
+feeling solid.,0
+up all night!!!,1
+deadline soon,1
+stressed out!!!,1
+help me.,2
+doing okay.,0
+im done.,2
+head hurts,1
+happy.,0
+love this class.,0
+i give up!!!,2
+so tired,1
+cant do this anymore,2
+empty,2
+empty.,2
+slept well,0
+love this class!!!,0
+balanced life.,0
+watching netflix.,0
+happy.,0
+head hurts,1
+empty,2
+nothing matters.,2
+finished my hw!!!,0
+i give up!!!,2
+all good.,0
+failed everything.,2
+happy.,0
+so depressed.,2
+i feel great.,0
+hate my life.,2
+im done,2
+im done,2
+nothing matters,2
+im good.,0
+busy week.,1
+cant do this anymore.,2
+coffee addict,1
+cant focus!!!,1
+no energy.,2
+slept well.,0
+feeling solid,0
+love this class,0
+watching netflix,0
+finished my hw,0
+im good,0
+rushing.,1
+all good,0
+finished my hw.,0
+broken.,2
+no energy.,2
+ready for the test.,0
+not stressed,0
+collapsing.,2
+up all night,1
+love this class.,0
+i give up,2
+too much homework.,1
+all good!!!,0
+failed everything.,2
+coffee addict.,1
+im good!!!,0
+busy week,1
+anxious.,1
+watching netflix.,0
+all good!!!,0
+rushing,1
+collapsing.,2
+head hurts.,1
+need sleep!!!,1
+scared of failing,1
+grinding.,1
+cant focus.,1
+easy day,0
+numb,2
+i give up.,2
+feeling solid.,0
+broken.,2
+cant focus,1
+scared of failing,1
+failed everything.,2
+empty,2
+finished my hw!!!,0
+doing okay,0
+love this class.,0
+so depressed.,2
+love this class.,0
+busy week.,1
+broken.,2
+crying!!!,2
+head hurts.,1
+busy week.,1
+anxious.,1
+need sleep,1
+feeling solid.,0
+so tired.,1
+happy,0
+feeling solid.,0
+nothing matters.,2
+collapsing,2
+grinding,1
+chilling.,0
+slept well,0
+no energy.,2
+empty,2
+hate my life!!!,2
+broken.,2
+help me,2
+balanced life.,0
+im tired,1
+cant focus,1
+love this class.,0
+chilling,0
+scared of failing.,1
+balanced life.,0
+stressed out.,1
+rushing,1
+grinding,1
+busy week,1
+coffee addict.,1
+happy.,0
+hate my life,2
+hate my life,2
+im good!!!,0
+ready for the test.,0
+chilling,0
+i feel great,0
+cant focus!!!,1
+grinding,1
+chilling.,0
+nothing matters!!!,2
+head hurts!!!,1
+ready for the test.,0
+i give up!!!,2
+i feel great.,0
+deadline soon!!!,1
+stressed out!!!,1
+happy.,0
+i feel great.,0
+cant focus.,1
+crying,2
+i give up,2
+cant focus.,1
+im tired,1
+watching netflix.,0
+want to drop out,2
+hate my life.,2
+no energy.,2
+up all night.,1
+coffee addict.,1
+so tired.,1
+i feel great.,0
+need sleep.,1
+doing okay!!!,0
+crying!!!,2
+broken,2
+im tired,1
+ready for the test.,0
+finished my hw!!!,0
+too much homework.,1
+so tired.,1
+finished my hw,0
+love this class.,0
+grinding.,1
+cant do this anymore.,2
+want to drop out.,2
+nothing matters.,2
+slept well!!!,0
+head hurts,1
+so tired.,1
+coffee addict,1
+not stressed!!!,0
+deadline soon,1
+chilling.,0
+im tired.,1
+anxious.,1
+scared of failing!!!,1
+watching netflix.,0
+too much homework,1
+deadline soon.,1
+nothing matters,2
+happy.,0
+want to drop out,2
+not stressed,0
+broken.,2
+anxious.,1
+not stressed,0
+busy week,1
+cant focus.,1
+help me,2
+rushing,1
+i give up.,2
+so depressed,2
+crying.,2
+stressed out.,1
+ready for the test,0
+chilling.,0
+head hurts,1
+cant do this anymore.,2
+rushing,1
+crying.,2
+love this class.,0
+im done,2
+watching netflix!!!,0
+need sleep.,1
+cant focus,1
+head hurts.,1
+watching netflix.,0
+no energy.,2
+up all night.,1
+numb!!!,2
+help me!!!,2
+so tired,1
+broken,2
+nothing matters.,2
+busy week,1
+finished my hw,0
+i give up.,2
+stressed out.,1
+grinding.,1
+up all night.,1
+up all night,1
+collapsing,2
+i feel great.,0
+so depressed.,2
+numb.,2
+collapsing.,2
+up all night,1
+rushing.,1
+im good.,0
+head hurts.,1
+head hurts!!!,1
+im tired,1
+grinding,1
+grinding.,1
+grinding.,1
+easy day.,0
+collapsing!!!,2
+watching netflix.,0
+hate my life!!!,2
+easy day,0
+stressed out.,1
+watching netflix!!!,0
+deadline soon.,1
+head hurts.,1
+too much homework.,1
+collapsing,2
+numb,2
+i give up.,2
+need sleep.,1
+failed everything.,2
+rushing.,1
+want to drop out,2
+busy week.,1
+love this class,0
+feeling solid,0
+im tired!!!,1
+im done!!!,2
+all good.,0
+so tired,1
+broken,2
+chilling.,0
+i give up.,2
+cant focus.,1
+ready for the test.,0
+chilling.,0
+grinding,1
+empty.,2
+numb,2
+numb.,2
+im tired.,1
+hate my life.,2
+scared of failing.,1
+so tired,1
+doing okay,0
+im tired,1
+coffee addict.,1
+need sleep,1
+ready for the test,0
+feeling solid.,0
+balanced life,0
+im good,0
+coffee addict.,1
+help me.,2
+rushing.,1
+empty!!!,2
+grinding.,1
+easy day,0
+chilling.,0
+doing okay.,0
+balanced life,0
+deadline soon.,1
+im good,0
+watching netflix.,0
+empty,2
+slept well!!!,0
+im done!!!,2
+nothing matters,2
+numb,2
+numb,2
+busy week,1
+i feel great.,0
+stressed out,1
+doing okay,0
+hate my life.,2
+chilling!!!,0
+head hurts,1
+head hurts,1
+failed everything.,2
+feeling solid.,0
+ready for the test.,0
+collapsing,2
+crying.,2
+cant do this anymore.,2
+need sleep.,1
+numb.,2
+so tired,1
+happy.,0
+stressed out,1
+ready for the test,0
+no energy.,2
+anxious.,1
+slept well.,0
+failed everything,2
+scared of failing,1
+chilling,0
+i feel great.,0
+crying,2
+stressed out,1
+finished my hw,0
+so depressed.,2
+rushing.,1
+so tired.,1
+anxious.,1
+numb.,2
+grinding.,1
+failed everything,2
+i give up!!!,2
+not stressed!!!,0
+finished my hw.,0
+happy.,0
+want to drop out,2
+so depressed!!!,2
+hate my life.,2
+want to drop out,2
+need sleep,1
+im tired.,1
+help me!!!,2
+im done,2
+i feel great,0
+ready for the test.,0
+slept well.,0
+cant focus.,1
+feeling solid,0
+deadline soon!!!,1
+rushing,1
+ready for the test,0
+scared of failing.,1
+too much homework,1
+deadline soon.,1
+all good,0
+grinding.,1
+feeling solid.,0
+empty.,2
+stressed out!!!,1
+help me,2
+doing okay!!!,0
+scared of failing,1
+scared of failing.,1
+all good,0
+feeling solid,0
+not stressed!!!,0
+cant do this anymore,2
+so depressed.,2
+broken!!!,2
+so depressed.,2
+not stressed.,0
+stressed out.,1
+empty,2
+failed everything.,2
+slept well,0
+broken.,2
+easy day!!!,0
+busy week.,1
+failed everything,2
+finished my hw,0
+coffee addict.,1
+numb!!!,2
+i give up.,2
+i feel great.,0
+easy day.,0
+help me!!!,2
+watching netflix.,0
+help me.,2
+hate my life.,2
+doing okay.,0
+need sleep.,1
+busy week!!!,1
+up all night.,1
+cant focus.,1
+all good.,0
+deadline soon.,1
+crying!!!,2
+im good.,0
+chilling.,0
+love this class,0
+grinding,1
+love this class,0
+broken,2
+numb.,2
+balanced life.,0
+balanced life,0
+numb.,2
+head hurts.,1
+finished my hw,0
+failed everything,2
+failed everything.,2
+slept well.,0
+numb.,2
+failed everything,2
+up all night,1
+anxious.,1
+im tired.,1
+up all night!!!,1
+so tired.,1
+i feel great.,0
+rushing.,1
+balanced life,0
+numb.,2
+finished my hw!!!,0
+help me,2
+watching netflix,0
+numb.,2
+watching netflix,0
+busy week.,1
+i give up,2
+nothing matters.,2
+help me.,2
+ready for the test.,0
+collapsing,2
+im tired,1
+help me.,2
+finished my hw,0
+numb,2
+up all night.,1
+anxious,1
+too much homework,1
+deadline soon.,1
+need sleep.,1
+love this class.,0
+hate my life!!!,2
+busy week,1
+balanced life.,0
+numb,2
+nothing matters.,2
+so depressed!!!,2
+want to drop out,2
+coffee addict,1
+i give up,2
+stressed out,1
+so depressed.,2
+feeling solid!!!,0
+chilling!!!,0
+want to drop out.,2
+finished my hw,0
+feeling solid.,0
+no energy.,2
+happy.,0
+collapsing.,2
+failed everything.,2
+up all night,1
+easy day,0
+stressed out,1
+feeling solid!!!,0
+hate my life,2
+feeling solid,0
+chilling,0
+happy.,0
+help me,2
+help me,2
+scared of failing,1
+im done,2
+im done.,2
+head hurts.,1
+head hurts.,1
+busy week,1
+im done,2
+doing okay.,0
+happy.,0
+balanced life,0
+not stressed.,0
+need sleep.,1
+watching netflix,0
+easy day,0
+im good!!!,0
+i feel great.,0
+balanced life.,0
+all good.,0
+i give up,2
+slept well.,0
+all good,0
+doing okay,0
+ready for the test,0
+all good.,0
+so depressed!!!,2
+slept well,0
+want to drop out.,2
+empty,2
+need sleep!!!,1
+rushing.,1
+scared of failing.,1
+balanced life,0
+grinding.,1
+need sleep.,1
+im done,2
+no energy,2
+balanced life.,0
+scared of failing.,1
+want to drop out,2
+stressed out,1
+so depressed,2
+hate my life,2
+stressed out!!!,1
+not stressed.,0
+so depressed,2
+im done.,2
+ready for the test,0
+rushing.,1
+crying.,2
+anxious.,1
+so depressed.,2
+watching netflix.,0
+so depressed.,2
+head hurts.,1
+doing okay,0
+ready for the test,0
+deadline soon!!!,1
+head hurts,1
+head hurts.,1
+busy week,1
+grinding.,1
+so tired.,1
+want to drop out.,2
+grinding,1
+easy day,0
+help me.,2
+chilling.,0
+doing okay,0
+numb,2
+deadline soon,1
+head hurts.,1
+collapsing.,2
+busy week.,1
+numb!!!,2
+stressed out,1
+doing okay,0
+not stressed,0
+not stressed.,0
+failed everything,2
+numb,2
+watching netflix.,0
+anxious,1
+failed everything,2
+all good,0
+so depressed.,2
+busy week,1
+im good.,0
+need sleep.,1
+numb.,2
+numb,2
+so depressed,2
+anxious,1
+finished my hw,0
+rushing,1
+i give up,2
+scared of failing.,1
+empty,2
+busy week.,1
+anxious.,1
+nothing matters.,2
+head hurts.,1
+i give up.,2
+too much homework,1
+so tired,1
+empty.,2
+numb.,2
+im done,2
+failed everything.,2
+need sleep.,1
+too much homework,1
+hate my life.,2
+busy week.,1
+love this class!!!,0
+im good.,0
+numb.,2
+nothing matters!!!,2
+cant focus,1
+all good,0
+nothing matters!!!,2
+i give up,2
+im done,2
+chilling,0
+help me,2
+not stressed.,0
+watching netflix,0
+cant focus.,1
+numb.,2
+no energy,2
+im good!!!,0
+scared of failing.,1
+i feel great.,0
+im good.,0
+collapsing,2
+im good,0
+head hurts.,1
+scared of failing.,1
+doing okay,0
+collapsing,2
+so depressed.,2
+want to drop out,2
+nothing matters.,2
+i give up!!!,2
+easy day!!!,0
+empty.,2
+so depressed,2
+im tired.,1
+stressed out,1
+broken.,2
+no energy,2
+deadline soon,1
+im tired,1
+help me.,2
+so tired,1
+cant focus.,1
+grinding,1
+no energy.,2
+crying.,2
+want to drop out.,2
+slept well.,0
+deadline soon,1
+chilling,0
+help me,2
+empty!!!,2
+deadline soon.,1
+want to drop out,2
+finished my hw,0
+hate my life.,2
+happy,0
+busy week,1
+head hurts.,1
+crying!!!,2
+anxious,1
+i give up,2
+feeling solid.,0
+slept well.,0
+so depressed.,2
+no energy.,2
+empty.,2
+collapsing.,2
+happy.,0
+love this class.,0
+so tired,1
+easy day.,0
+watching netflix,0
+doing okay.,0
+grinding!!!,1
+rushing,1
+want to drop out,2
+no energy,2
+balanced life,0
+rushing.,1
+want to drop out.,2
+im tired.,1
+balanced life,0
+empty,2
+help me.,2
+i feel great.,0
+crying.,2
+feeling solid,0
+so tired,1
+failed everything,2
+up all night,1
+nothing matters,2
+im done.,2
+feeling solid,0
+rushing,1
+so tired.,1
+cant do this anymore,2
+want to drop out.,2
+i feel great.,0
+so tired.,1
+cant do this anymore,2
+coffee addict.,1
+love this class.,0
+need sleep,1
+no energy.,2
+doing okay.,0
+cant do this anymore!!!,2
+nothing matters,2
+empty,2
+want to drop out!!!,2
+chilling,0
+feeling solid,0
+up all night.,1
+nothing matters!!!,2
+numb,2
+rushing.,1
+so depressed.,2
+i give up!!!,2
+slept well,0
+balanced life,0
+not stressed,0
+crying,2
+cant focus.,1
+need sleep.,1
+watching netflix.,0
+collapsing.,2
+easy day,0
+head hurts,1
+nothing matters,2
+i feel great.,0
+easy day,0
+need sleep.,1
+im good.,0
+collapsing!!!,2
+help me!!!,2
+love this class,0
+rushing,1
+cant do this anymore.,2
+easy day.,0
+watching netflix.,0
+crying!!!,2
+cant focus,1
+want to drop out.,2
+not stressed.,0
+i feel great,0
+up all night.,1
+coffee addict,1
+anxious.,1
+love this class.,0
+stressed out,1
+so tired,1
+numb.,2
+slept well,0
+coffee addict,1
+anxious.,1
+want to drop out,2
+stressed out!!!,1
+hate my life!!!,2
+i give up.,2
+cant focus.,1
+scared of failing.,1
+scared of failing.,1
+busy week,1
+head hurts.,1
+numb,2
+busy week!!!,1
+collapsing.,2
+crying.,2
+grinding.,1
+too much homework.,1
+easy day!!!,0
+slept well.,0
+busy week.,1
+need sleep.,1
+coffee addict,1
+stressed out.,1
+scared of failing!!!,1
+balanced life,0
+help me.,2
+scared of failing.,1
+easy day.,0
+broken.,2
+grinding!!!,1
+head hurts.,1

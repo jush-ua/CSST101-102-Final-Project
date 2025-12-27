@@ -23,6 +23,7 @@
 - [Training Thy Model](#-training-thy-model)
 - [The Three Classifications](#-the-three-classifications)
 - [Join the Fellowship](#-join-the-fellowship)
+- [The Contributor's Guide to Git & Git LFS](#-the-contributors-guide-to-git--git-lfs)
 
 ---
 
@@ -526,6 +527,179 @@ The training scrolls (`dataset/student_journals.csv`) must contain two columns:
 3. 🎨 **Build Frontend**: Craft a user-friendly web interface for the masses
 4. 🌍 **Add Languages**: Enable multilingual burnout detection
 5. 📱 **Mobile App**: Develop iOS/Android applications for scholars on the go
+
+---
+
+## 🏰 The Contributor's Guide to Git & Git LFS
+
+*Hark, noble contributor! Follow these sacred scrolls to properly contribute to this grand apparatus!* 📜⚔️
+
+### 📋 Prerequisites for Contributors
+
+Before thy contribution, ensure thou hast installed:
+
+| 🔧 Tool | 📥 Installation | 📋 Purpose |
+|---------|----------------|------------|
+| **Git** | [git-scm.com](https://git-scm.com/downloads) | Version control sorcery |
+| **Git LFS** | [git-lfs.github.com](https://git-lfs.github.com/) | Large file storage vault |
+
+### 🚀 Step I: Installing Git LFS
+
+```bash
+# Windows (via Git Bash or PowerShell)
+git lfs install
+
+# macOS (via Homebrew)
+brew install git-lfs
+git lfs install
+
+# Ubuntu/Debian
+sudo apt-get install git-lfs
+git lfs install
+```
+
+*Verify thy installation:*
+```bash
+git lfs version
+# Should display: git-lfs/3.x.x (...)
+```
+
+### 📦 Step II: Clone the Repository
+
+```bash
+# Clone with LFS files automatically
+git clone https://github.com/ItSnOtNoOkIeBeAr/Academic-Burnout-Prevention-and-Rule-Based-Advisory-System-for-College-Students.git
+
+# Navigate into the castle
+cd Academic-Burnout-Prevention-and-Rule-Based-Advisory-System-for-College-Students
+```
+
+### 🔄 Step III: Pulling LFS Files
+
+*If thou hast cloned but the model files appear as pointers:*
+```bash
+# Fetch all LFS files
+git lfs pull
+
+# Or fetch specific files
+git lfs pull --include="models/**"
+```
+
+### ⚔️ Step IV: Making Thy Contribution
+
+```bash
+# 1. Create a new branch for thy quest
+git checkout -b feature/thy-noble-contribution
+
+# 2. Make thy changes to the code
+# ... edit files ...
+
+# 3. Stage thy changes
+git add .
+
+# 4. Commit with a descriptive message
+git commit -m "✨ Add: Brief description of thy noble deed"
+
+# 5. Push to GitHub
+git push origin feature/thy-noble-contribution
+```
+
+### 🏰 Step V: Pushing Large Files with Git LFS
+
+*The vault (Git LFS) tracketh these file types automatically:*
+
+| 📁 Extension | 📋 File Type |
+|--------------|--------------|
+| `*.safetensors` | Model weights (SafeTensors format) |
+| `*.bin` | PyTorch model binaries |
+| `*.pt` | PyTorch tensors |
+| `*.pth` | PyTorch checkpoints |
+
+*If thou needest to track additional large files:*
+```bash
+# Track a new file type (e.g., large CSV files)
+git lfs track "*.csv"
+
+# Or track a specific file
+git lfs track "path/to/large_file.zip"
+
+# This updates .gitattributes - commit it!
+git add .gitattributes
+git commit -m "📦 Track: Add new file type to LFS"
+```
+
+*Verify what LFS is tracking:*
+```bash
+git lfs ls-files
+```
+
+### 🚀 Step VI: Pushing to GitHub
+
+```bash
+# Push thy branch (LFS files are handled automatically)
+git push origin feature/thy-noble-contribution
+
+# If pushing large files for the first time, thou may need:
+git lfs push origin feature/thy-noble-contribution --all
+```
+
+### 🔮 Step VII: Creating a Pull Request
+
+1. 🌐 Go to the [GitHub Repository](https://github.com/ItSnOtNoOkIeBeAr/Academic-Burnout-Prevention-and-Rule-Based-Advisory-System-for-College-Students)
+2. 🔔 Click **"Compare & pull request"** for thy branch
+3. 📝 Fill out the PR template with:
+   - What changes thou hast made
+   - Why these changes benefit the realm
+   - Any testing thou hast performed
+4. ✅ Submit and await review from the Council!
+
+### 📜 Git Commit Message Convention
+
+*Follow this sacred format for commit messages:*
+
+| 🏷️ Prefix | 📋 Usage |
+|-----------|----------|
+| `✨ Add:` | New features or files |
+| `🔧 Fix:` | Bug fixes |
+| `📝 Docs:` | Documentation updates |
+| `🎨 Style:` | Code formatting (no logic change) |
+| `♻️ Refactor:` | Code restructuring |
+| `🧪 Test:` | Adding or updating tests |
+| `📦 Track:` | Git LFS tracking changes |
+| `🚀 Deploy:` | Deployment related changes |
+
+*Example commit messages:*
+```bash
+git commit -m "✨ Add: New stress-related phrases to training data"
+git commit -m "🔧 Fix: Resolve encoding issue in journal parser"
+git commit -m "📝 Docs: Update README with API examples"
+```
+
+### ⚠️ Common Issues & Solutions
+
+**Issue: "Encountered X file(s) that should have been pointers"**
+```bash
+# Fix LFS pointer issues
+git lfs migrate import --include="*.safetensors,*.bin,*.pt,*.pth" --everything
+git push --force-with-lease
+```
+
+**Issue: "Smudge error" when pulling**
+```bash
+# Clear LFS cache and re-pull
+git lfs fetch --all
+git lfs checkout
+```
+
+**Issue: Push rejected due to file size**
+```bash
+# Ensure LFS is tracking the file
+git lfs track "path/to/large-file.ext"
+git add .gitattributes
+git add path/to/large-file.ext
+git commit -m "📦 Track: Add large file to LFS"
+git push
+```
 
 ---
 
