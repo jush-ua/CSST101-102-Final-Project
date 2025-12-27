@@ -221,14 +221,16 @@ pip install -r requirements.txt
 
 ### 📊 Model Performance
 
-The Oracle hath been trained and achieved these noble metrics:
+The Oracle hath been trained upon **1000 synthetic journal entries** and achieved these most glorious metrics:
 
 | 📈 Metric | 🏆 Score |
 |-----------|----------|
-| **Accuracy** | 94.44% |
-| **Precision** | 95.24% |
-| **Recall** | 94.44% |
-| **F1 Score** | 94.41% |
+| **Accuracy** | 100.00% ✨ |
+| **Precision** | 100.00% ✨ |
+| **Recall** | 100.00% ✨ |
+| **F1 Score** | 100.00% ✨ |
+
+*A perfect score! The Oracle hath achieved enlightenment!* 🧙‍♂️🔮
 
 ### 🗂️ Model Files (Stored via Git LFS)
 
@@ -261,18 +263,18 @@ python training/train_bert.py
 ```
 🎓 ACADEMIC BURNOUT DETECTION - BERT FINE-TUNING
 ============================================================
-⏰ Started at: 2025-12-25 10:00:00
+⏰ Started at: 2025-12-27 14:16:19
 💻 Device: cuda (or cpu)
 🤖 Base Model: bert-base-uncased
 ...
 📈 EVALUATION RESULTS:
-   Accuracy:  0.9200
-   Precision: 0.9180
-   Recall:    0.9200
-   F1 Score:  0.9185
+   Accuracy:  1.0000
+   Precision: 1.0000
+   Recall:    1.0000
+   F1 Score:  1.0000
 ```
 
-*Rejoice! Thy model hath been trained!* 🎉
+*Rejoice! Thy model hath achieved perfection!* 🎉✨
 
 ---
 
