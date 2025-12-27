@@ -97,51 +97,47 @@ class JournalEntry(BaseModel):
     @validator('text')
     def validate_text(cls, v):
         if not v or not v.strip():
-            raise ValueError("Journal entry cannot be empty or contain only whitespace")
+            raise ValueError("💨 Silence?! Doth thou think the Oracle reads minds?! Speak up, ye mute peasant!")
         
         text = v.strip()
         
         # Check for gibberish (too many special characters)
         special_char_ratio = sum(1 for c in text if not c.isalnum() and not c.isspace()) / len(text)
         if special_char_ratio > 0.3:
-            raise ValueError("Thy entry contains too many special characters! Please write in plain English.")
+            raise ValueError("🤡 What manner of cryptic runes art these?! Thy keyboard vomit offends the Oracle! Write like a proper scholar, not a cat walking on keys! 🐱⌨️")
         
         # Check for keyboard mashing (words that are too long without spaces)
         words = text.split()
         if len(words) == 0:
-            raise ValueError("Please write some actual words, noble scholar!")
+            raise ValueError("🫥 Thou hast given me NOTHING! Art thou too lazy to form words? Even a village idiot could do better! 🙄")
         
         # Check average word length - gibberish tends to have very long "words"
         avg_word_length = sum(len(word) for word in words) / len(words)
         if avg_word_length > 12:
-            raise ValueError("Thy words art suspiciously long! Please write normally, not in keyboard-smashing tongue.")
+            raise ValueError("🤨 By the saints! Thy 'words' art longer than a dragon's tail! Didst thou fall asleep on thy keyboard? Wake up and write properly! 🐉💤")
         
         # Check for very long words (keyboard mashing)
         max_word_length = max(len(word) for word in words)
         if max_word_length > 20:
-            raise ValueError(f"Hark! A word with {max_word_length} characters? Please write actual words, noble scholar!")
+            raise ValueError(f"😱 ZOUNDS! A word with {max_word_length} letters?! Even the ancient scrolls contain no such abomination! Art thou possessed by a keyboard demon?! 👺")
         
         # Check if words have proper vowel content (real English words have vowels)
         vowels = set('aeiouAEIOU')
         for word in words:
-            # Only check words that are mostly alphabetic
             alpha_chars = [c for c in word if c.isalpha()]
-            if len(alpha_chars) >= 4:  # Only check words with 4+ letters
+            if len(alpha_chars) >= 4:
                 vowel_count = sum(1 for c in alpha_chars if c in vowels)
                 vowel_ratio = vowel_count / len(alpha_chars)
-                # Real words typically have 20-60% vowels
                 if vowel_ratio < 0.1:
-                    raise ValueError(f"The word '{word[:15]}...' hath no vowels! Please write real English words.")
+                    raise ValueError(f"😵 '{word[:15]}' hath NO VOWELS! Dost thou speak in consonant curses?! The Oracle doth not understand thy barbaric grunting! 🗿")
         
         # Check for too many numbers mixed with letters (gibberish pattern)
         for word in words:
             if len(word) >= 5:
                 digit_count = sum(1 for c in word if c.isdigit())
                 alpha_count = sum(1 for c in word if c.isalpha())
-                if digit_count > 0 and alpha_count > 0:
-                    # Mixed alphanumeric - likely gibberish like "jdao7835890713"
-                    if digit_count >= 3 and alpha_count >= 3:
-                        raise ValueError("Thy entry contains strange number-letter mixtures! Please write normally.")
+                if digit_count >= 3 and alpha_count >= 3:
+                    raise ValueError("🤖 What is this numerical sorcery?! 'abc123xyz'?! Art thou a malfunctioning automaton?! The Oracle speaketh ENGLISH, not robot gibberish! 🦾")
         
         # Check if text has at least some common English patterns
         common_words = {'i', 'im', 'my', 'me', 'the', 'a', 'an', 'is', 'am', 'are', 'was', 'were', 'be', 
@@ -155,17 +151,15 @@ class JournalEntry(BaseModel):
         lower_words = [word.lower().strip('.,!?;\'"()[]{}') for word in words]
         common_count = sum(1 for word in lower_words if word in common_words)
         
-        # Require at least one common word for any entry
         if common_count == 0:
-            raise ValueError("The Oracle cannot understand thy tongue! Please write in English with real words.")
+            raise ValueError("🧙‍♂️💢 FORSOOTH! The Oracle hath studied every tongue known to man, yet THIS incomprehensible drivel escapes even my wisdom! Speaketh ENGLISH or begone, thou gibberish-spewing gremlin! 👽")
         
         # Check for repeated character patterns (like 'asdfasdfasdf')
         if len(text) > 20:
-            # Check if any 4-character pattern repeats more than 3 times
             for i in range(len(text) - 4):
                 pattern = text[i:i+4].lower()
                 if text.lower().count(pattern) > 3 and pattern.isalpha():
-                    raise ValueError("Repeated patterns detected! Please write a genuine entry.")
+                    raise ValueError("🔁 Ah yes, repeating the same nonsense over and over! How... creative. 😒 The Oracle is NOT amused by thy lazy keyboard spam! Put some effort in, ye slothful scribe! 🦥")
         
         return text
 

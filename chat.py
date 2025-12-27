@@ -20,35 +20,35 @@ def validate_input(text):
     Returns (is_valid, error_message)
     """
     if not text or not text.strip():
-        return False, "Please share thy thoughts! The Oracle cannot divine from silence."
+        return False, "💨 Silence?! Doth thou think the Oracle reads minds?! Speak up, ye mute peasant!"
     
     text = text.strip()
     
     # Check minimum length
     if len(text) < 10:
-        return False, "Thy message is too brief! Please share more of thy thoughts (at least 10 characters)."
+        return False, "🦎 What is this, a message for ANTS?! The Oracle demandeth at least 10 characters! Put some effort in, ye lazy scribe!"
     
     # Check for too many special characters
     special_char_ratio = sum(1 for c in text if not c.isalnum() and not c.isspace()) / len(text)
     if special_char_ratio > 0.3:
-        return False, "⚠️ Thy entry contains too many special characters! Please write in plain English."
+        return False, "🤡 What manner of cryptic runes art these?! Thy keyboard vomit offends the Oracle! Write like a proper scholar, not a cat walking on keys! 🐱⌨️"
     
     # Split into words
     words = text.split()
     if len(words) == 0:
-        return False, "⚠️ Please write some actual words, noble scholar!"
+        return False, "🫥 Thou hast given me NOTHING! Art thou too lazy to form words? Even a village idiot could do better! 🙄"
     
-    # Check average word length (gibberish = very long "words")
+    # Check average word length
     avg_word_length = sum(len(word) for word in words) / len(words)
     if avg_word_length > 12:
-        return False, "⚠️ Thy words art suspiciously long! Please write normally."
+        return False, "🤨 By the saints! Thy 'words' art longer than a dragon's tail! Didst thou fall asleep on thy keyboard? Wake up and write properly! 🐉💤"
     
     # Check for very long words
     max_word_length = max(len(word) for word in words)
     if max_word_length > 20:
-        return False, f"⚠️ Hark! A word with {max_word_length} characters? Please write actual words!"
+        return False, f"😱 ZOUNDS! A word with {max_word_length} letters?! Even the ancient scrolls contain no such abomination! Art thou possessed by a keyboard demon?! 👺"
     
-    # Check if words have vowels (real English words have vowels)
+    # Check if words have vowels
     vowels = set('aeiouAEIOU')
     for word in words:
         alpha_chars = [c for c in word if c.isalpha()]
@@ -56,17 +56,17 @@ def validate_input(text):
             vowel_count = sum(1 for c in alpha_chars if c in vowels)
             vowel_ratio = vowel_count / len(alpha_chars)
             if vowel_ratio < 0.1:
-                return False, f"⚠️ The word '{word[:15]}' hath no vowels! Please write real words."
+                return False, f"😵 '{word[:15]}' hath NO VOWELS! Dost thou speak in consonant curses?! The Oracle doth not understand thy barbaric grunting! 🗿"
     
-    # Check for number-letter mixtures (gibberish like "jdao7835890713")
+    # Check for number-letter mixtures
     for word in words:
         if len(word) >= 5:
             digit_count = sum(1 for c in word if c.isdigit())
             alpha_count = sum(1 for c in word if c.isalpha())
             if digit_count >= 3 and alpha_count >= 3:
-                return False, "⚠️ Thy entry contains strange number-letter mixtures! Please write normally."
+                return False, "🤖 What is this numerical sorcery?! Art thou a malfunctioning automaton?! The Oracle speaketh ENGLISH, not robot gibberish! 🦾"
     
-    # Check for common English words - REQUIRE at least one
+    # Check for common English words
     common_words = {'i', 'im', 'my', 'me', 'the', 'a', 'an', 'is', 'am', 'are', 'was', 'were', 'be', 
                    'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 
                    'could', 'should', 'can', 'cant', 'to', 'of', 'in', 'for', 'on', 'with', 'at',
@@ -79,14 +79,14 @@ def validate_input(text):
     common_count = sum(1 for word in lower_words if word in common_words)
     
     if common_count == 0:
-        return False, "⚠️ The Oracle cannot understand thy tongue! Please write in English with real words."
+        return False, "🧙‍♂️💢 FORSOOTH! The Oracle hath studied every tongue known to man, yet THIS incomprehensible drivel escapes even my wisdom! Speaketh ENGLISH or begone, thou gibberish-spewing gremlin! 👽"
     
     # Check for repeated patterns
     if len(text) > 20:
         for i in range(len(text) - 4):
             pattern = text[i:i+4].lower()
             if text.lower().count(pattern) > 3 and pattern.isalpha():
-                return False, "⚠️ Repeated patterns detected! Please write a genuine entry."
+                return False, "🔁 Ah yes, repeating the same nonsense over and over! How... creative. 😒 The Oracle is NOT amused by thy lazy keyboard spam! Put some effort in, ye slothful scribe! 🦥"
     
     return True, None
 
