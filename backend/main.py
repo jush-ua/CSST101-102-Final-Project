@@ -98,11 +98,53 @@ class JournalEntry(BaseModel):
     def validate_text(cls, v):
         if not v or not v.strip():
             raise ValueError("Journal entry cannot be empty or contain only whitespace")
+        
+        text = v.strip()
+        
         # Check for gibberish (too many special characters)
-        special_char_ratio = sum(1 for c in v if not c.isalnum() and not c.isspace()) / len(v)
-        if special_char_ratio > 0.5:
-            raise ValueError("Journal entry contains too many special characters")
-        return v.strip()
+        special_char_ratio = sum(1 for c in text if not c.isalnum() and not c.isspace()) / len(text)
+        if special_char_ratio > 0.3:
+            raise ValueError("Thy entry contains too many special characters! Please write in plain English.")
+        
+        # Check for keyboard mashing (words that are too long without spaces)
+        words = text.split()
+        if len(words) == 0:
+            raise ValueError("Please write some actual words, noble scholar!")
+        
+        # Check average word length - gibberish tends to have very long "words"
+        avg_word_length = sum(len(word) for word in words) / len(words)
+        if avg_word_length > 15:
+            raise ValueError("Thy words art suspiciously long! Please write normally, not in keyboard-smashing tongue.")
+        
+        # Check for very long words (keyboard mashing)
+        max_word_length = max(len(word) for word in words)
+        if max_word_length > 25:
+            raise ValueError(f"Hark! A word with {max_word_length} characters? Please write actual words, noble scholar!")
+        
+        # Check if text has at least some common English patterns
+        common_words = {'i', 'im', 'my', 'me', 'the', 'a', 'an', 'is', 'am', 'are', 'was', 'were', 'be', 
+                       'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 
+                       'could', 'should', 'can', 'cant', 'to', 'of', 'in', 'for', 'on', 'with', 'at',
+                       'and', 'but', 'or', 'so', 'just', 'not', 'no', 'yes', 'this', 'that', 'it',
+                       'feel', 'feeling', 'felt', 'tired', 'stressed', 'happy', 'sad', 'okay', 'good',
+                       'bad', 'help', 'need', 'want', 'today', 'yesterday', 'school', 'work', 'class'}
+        
+        lower_words = [word.lower().strip('.,!?;\'"()[]{}') for word in words]
+        common_count = sum(1 for word in lower_words if word in common_words)
+        
+        # If no common words found and text is long, it's probably gibberish
+        if common_count == 0 and len(words) > 3:
+            raise ValueError("The Oracle cannot understand thy tongue! Please write in English.")
+        
+        # Check for repeated character patterns (like 'asdfasdfasdf')
+        if len(text) > 20:
+            # Check if any 4-character pattern repeats more than 3 times
+            for i in range(len(text) - 4):
+                pattern = text[i:i+4].lower()
+                if text.lower().count(pattern) > 3 and pattern.isalpha():
+                    raise ValueError("Repeated patterns detected! Please write a genuine entry.")
+        
+        return text
 
 
 class BatchJournalEntries(BaseModel):

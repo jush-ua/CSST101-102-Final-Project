@@ -14,6 +14,63 @@ def clear_screen():
     """Clear the terminal screen"""
     os.system('cls' if os.name == 'nt' else 'clear')
 
+def validate_input(text):
+    """
+    Validate user input for gibberish detection.
+    Returns (is_valid, error_message)
+    """
+    if not text or not text.strip():
+        return False, "Please share thy thoughts! The Oracle cannot divine from silence."
+    
+    text = text.strip()
+    
+    # Check minimum length
+    if len(text) < 10:
+        return False, "Thy message is too brief! Please share more of thy thoughts (at least 10 characters)."
+    
+    # Check for too many special characters
+    special_char_ratio = sum(1 for c in text if not c.isalnum() and not c.isspace()) / len(text)
+    if special_char_ratio > 0.3:
+        return False, "⚠️ Thy entry contains too many special characters! Please write in plain English."
+    
+    # Split into words
+    words = text.split()
+    if len(words) == 0:
+        return False, "⚠️ Please write some actual words, noble scholar!"
+    
+    # Check average word length (gibberish = very long "words")
+    avg_word_length = sum(len(word) for word in words) / len(words)
+    if avg_word_length > 15:
+        return False, "⚠️ Thy words art suspiciously long! Please write normally, not in keyboard-smashing tongue."
+    
+    # Check for very long words
+    max_word_length = max(len(word) for word in words)
+    if max_word_length > 25:
+        return False, f"⚠️ Hark! A word with {max_word_length} characters? Please write actual words!"
+    
+    # Check for common English words
+    common_words = {'i', 'im', 'my', 'me', 'the', 'a', 'an', 'is', 'am', 'are', 'was', 'were', 'be', 
+                   'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 
+                   'could', 'should', 'can', 'cant', 'to', 'of', 'in', 'for', 'on', 'with', 'at',
+                   'and', 'but', 'or', 'so', 'just', 'not', 'no', 'yes', 'this', 'that', 'it',
+                   'feel', 'feeling', 'felt', 'tired', 'stressed', 'happy', 'sad', 'okay', 'good',
+                   'bad', 'help', 'need', 'want', 'today', 'yesterday', 'school', 'work', 'class'}
+    
+    lower_words = [word.lower().strip('.,!?;\'"()[]{}') for word in words]
+    common_count = sum(1 for word in lower_words if word in common_words)
+    
+    if common_count == 0 and len(words) > 3:
+        return False, "⚠️ The Oracle cannot understand thy tongue! Please write in English."
+    
+    # Check for repeated patterns
+    if len(text) > 20:
+        for i in range(len(text) - 4):
+            pattern = text[i:i+4].lower()
+            if text.lower().count(pattern) > 3 and pattern.isalpha():
+                return False, "⚠️ Repeated patterns detected! Please write a genuine entry."
+    
+    return True, None
+
 def print_banner():
     """Print the welcome banner"""
     print("""
@@ -207,8 +264,11 @@ Then run this chat script again!
         elif user_input.lower() == 'help':
             print_help()
             continue
-        elif len(user_input) < 10:
-            print("⚠️  Thy message is too brief! Please share more of thy thoughts (at least 10 characters).")
+        
+        # Validate input before sending to API
+        is_valid, error_msg = validate_input(user_input)
+        if not is_valid:
+            print(error_msg)
             continue
         
         # Analyze the entry
