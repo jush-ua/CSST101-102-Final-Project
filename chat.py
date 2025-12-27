@@ -40,27 +40,46 @@ def validate_input(text):
     
     # Check average word length (gibberish = very long "words")
     avg_word_length = sum(len(word) for word in words) / len(words)
-    if avg_word_length > 15:
-        return False, "⚠️ Thy words art suspiciously long! Please write normally, not in keyboard-smashing tongue."
+    if avg_word_length > 12:
+        return False, "⚠️ Thy words art suspiciously long! Please write normally."
     
     # Check for very long words
     max_word_length = max(len(word) for word in words)
-    if max_word_length > 25:
+    if max_word_length > 20:
         return False, f"⚠️ Hark! A word with {max_word_length} characters? Please write actual words!"
     
-    # Check for common English words
+    # Check if words have vowels (real English words have vowels)
+    vowels = set('aeiouAEIOU')
+    for word in words:
+        alpha_chars = [c for c in word if c.isalpha()]
+        if len(alpha_chars) >= 4:
+            vowel_count = sum(1 for c in alpha_chars if c in vowels)
+            vowel_ratio = vowel_count / len(alpha_chars)
+            if vowel_ratio < 0.1:
+                return False, f"⚠️ The word '{word[:15]}' hath no vowels! Please write real words."
+    
+    # Check for number-letter mixtures (gibberish like "jdao7835890713")
+    for word in words:
+        if len(word) >= 5:
+            digit_count = sum(1 for c in word if c.isdigit())
+            alpha_count = sum(1 for c in word if c.isalpha())
+            if digit_count >= 3 and alpha_count >= 3:
+                return False, "⚠️ Thy entry contains strange number-letter mixtures! Please write normally."
+    
+    # Check for common English words - REQUIRE at least one
     common_words = {'i', 'im', 'my', 'me', 'the', 'a', 'an', 'is', 'am', 'are', 'was', 'were', 'be', 
                    'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 
                    'could', 'should', 'can', 'cant', 'to', 'of', 'in', 'for', 'on', 'with', 'at',
                    'and', 'but', 'or', 'so', 'just', 'not', 'no', 'yes', 'this', 'that', 'it',
                    'feel', 'feeling', 'felt', 'tired', 'stressed', 'happy', 'sad', 'okay', 'good',
-                   'bad', 'help', 'need', 'want', 'today', 'yesterday', 'school', 'work', 'class'}
+                   'bad', 'help', 'need', 'want', 'today', 'yesterday', 'school', 'work', 'class',
+                   'really', 'very', 'much', 'too', 'more', 'all', 'out', 'up', 'down', 'about'}
     
     lower_words = [word.lower().strip('.,!?;\'"()[]{}') for word in words]
     common_count = sum(1 for word in lower_words if word in common_words)
     
-    if common_count == 0 and len(words) > 3:
-        return False, "⚠️ The Oracle cannot understand thy tongue! Please write in English."
+    if common_count == 0:
+        return False, "⚠️ The Oracle cannot understand thy tongue! Please write in English with real words."
     
     # Check for repeated patterns
     if len(text) > 20:
