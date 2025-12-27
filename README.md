@@ -576,7 +576,48 @@ git clone https://github.com/ItSnOtNoOkIeBeAr/Academic-Burnout-Prevention-and-Ru
 cd Academic-Burnout-Prevention-and-Rule-Based-Advisory-System-for-College-Students
 ```
 
-### 🔄 Step III: Pulling LFS Files
+### 🔄 Step III: For Existing Users - Pulling Latest Changes
+
+*If thou already hast the repository cloned and wish to receive the latest updates:*
+
+```bash
+# Navigate to thy project directory
+cd Academic-Burnout-Prevention-and-Rule-Based-Advisory-System-for-College-Students
+
+# Fetch and pull the latest changes from the main branch
+git pull origin main
+
+# If LFS files were updated, ensure they are downloaded
+git lfs pull
+```
+
+*If thou hast made local changes that conflict:*
+```bash
+# Stash thy changes temporarily
+git stash
+
+# Pull the latest updates
+git pull origin main
+git lfs pull
+
+# Restore thy changes
+git stash pop
+```
+
+*To update thy local branch with the latest from main:*
+```bash
+# Switch to thy feature branch
+git checkout feature/thy-branch-name
+
+# Merge latest changes from main
+git fetch origin
+git merge origin/main
+
+# Pull any new LFS files
+git lfs pull
+```
+
+### 🔍 Step IV: Pulling LFS Files
 
 *If thou hast cloned but the model files appear as pointers:*
 ```bash
@@ -587,7 +628,18 @@ git lfs pull
 git lfs pull --include="models/**"
 ```
 
-### ⚔️ Step IV: Making Thy Contribution
+*Verify LFS files are downloaded correctly:*
+```bash
+# Check LFS file status
+git lfs ls-files
+
+# Check if files are actual content (not pointers)
+# The model.safetensors should be ~440 MB, not a few bytes
+dir models\best_burnout_model\  # Windows
+ls -la models/best_burnout_model/  # macOS/Linux
+```
+
+### ⚔️ Step V: Making Thy Contribution
 
 ```bash
 # 1. Create a new branch for thy quest
