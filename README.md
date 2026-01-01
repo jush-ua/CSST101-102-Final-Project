@@ -209,6 +209,48 @@ pip install -r requirements.txt
 
 *Note: Installation may take several minutes depending on your internet connection.*
 
+### 🔧 Common Installation Issues
+
+<details>
+<summary><b>❓ Model file is only a few KB instead of ~440MB</b></summary>
+
+This means Git LFS didn't download the actual model. Run:
+```bash
+git lfs install
+git lfs pull
+```
+</details>
+
+<details>
+<summary><b>❓ "Git LFS not found" error</b></summary>
+
+Install Git LFS first:
+- **Windows:** `winget install GitHub.GitLFS` or download from [git-lfs.com](https://git-lfs.com)
+- **Mac:** `brew install git-lfs`
+- **Linux:** `sudo apt install git-lfs`
+
+Then run: `git lfs install`
+</details>
+
+<details>
+<summary><b>❓ CUDA/GPU errors on Windows</b></summary>
+
+If you don't have a GPU, PyTorch will use CPU automatically. If you have GPU issues:
+```bash
+pip uninstall torch
+pip install torch --index-url https://download.pytorch.org/whl/cpu
+```
+</details>
+
+<details>
+<summary><b>❓ Permission denied errors</b></summary>
+
+Try running your terminal as administrator, or use:
+```bash
+pip install --user -r requirements.txt
+```
+</details>
+
 ---
 
 ## 🧠 Pre-Trained Model
@@ -325,6 +367,34 @@ print(f"💬 Summary: {result['advice']['summary']}")
 
 ## 🗺️ Quick Start Guide
 
+### 🚀 One-Click Startup (Recommended)
+
+The easiest way to run the project is using the provided startup scripts:
+
+**Windows:**
+```bash
+# Double-click run.bat or run from terminal:
+.\run.bat
+```
+
+**Linux/Mac:**
+```bash
+# Make the script executable (first time only)
+chmod +x run.sh
+
+# Run the startup script
+./run.sh
+```
+
+The script will:
+- ✅ Check Python installation
+- ✅ Install dependencies if needed
+- ✅ Start the API server automatically
+
+### 📝 Manual Setup
+
+If you prefer manual setup:
+
 ```bash
 # Step 1: Navigate to the project
 cd Burnout_Advisor_Project
@@ -341,6 +411,16 @@ python main.py
 
 # Step 5: Open http://localhost:8000/docs in your browser
 ```
+
+### 🌐 Accessing the Application
+
+Once the server is running:
+
+| Interface | URL | Description |
+|-----------|-----|-------------|
+| 🎨 **Web Frontend** | Open `frontend/index.html` in browser | Beautiful medieval-themed chat interface |
+| 📚 **API Docs** | http://localhost:8000/docs | Interactive Swagger documentation |
+| 💻 **CLI Chat** | `python chat.py` (in new terminal) | Command-line chat interface |
 
 ---
 
