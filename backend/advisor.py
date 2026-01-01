@@ -264,19 +264,19 @@ class BurnoutAdvisor:
         """Generate a summary message based on burnout level"""
         summaries = {
             BurnoutLevel.HEALTHY: [
-                "Great news! Your journal entry indicates a healthy mental state. Keep up the positive habits!",
-                "You seem to be managing well. Your balanced approach is working - continue taking care of yourself!",
-                "Your mental wellness indicators look positive. This is a good time to build resilience."
+                "🌟 Huzzah! The Oracle hath divined thy journal and findeth thee in excellent spirits! Continue thy virtuous ways, noble scholar!",
+                "✨ By mine ancient wisdom, thou art managing thy scholarly burdens well! Thy balanced approach pleaseth the Oracle greatly!",
+                "🎉 Rejoice! Thy mental fortitude shineth bright like the morning sun! 'Tis a splendid time to build even greater resilience!"
             ],
             BurnoutLevel.STRESSED: [
-                "Your entry shows signs of academic stress. This is common and manageable with the right strategies.",
-                "I'm noticing some stress indicators. Taking proactive steps now can prevent things from escalating.",
-                "You're experiencing elevated stress levels. Let's work on some strategies to help you cope better."
+                "⚠️ Hearken, young scholar! The Oracle detecteth signs of academic stress upon thy soul. Fear not - 'tis common and manageable with proper strategies!",
+                "🔮 The Oracle's crystal ball revealeth stress indicators in thy writing. Taking action NOW shall prevent the darkness from spreading!",
+                "📜 Thy words speak of elevated burdens, dear student. Let us work together on strategies to ease thy troubled mind!"
             ],
             BurnoutLevel.BURNOUT: [
-                "I'm concerned about what you've shared. Your entry suggests significant burnout. Please prioritize getting help.",
-                "Your responses indicate you may be experiencing burnout. This is serious, but recovery is possible with support.",
-                "I hear that you're struggling. Burnout is real and valid. Please reach out for professional support today."
+                "🚨 HARK! The Oracle is most troubled by what thou hast shared! Thy entry speaketh of significant burnout. Prithee, prioritize seeking aid IMMEDIATELY!",
+                "⚡ By the ancient scrolls! Thy responses indicate thou may be experiencing the dreaded burnout. 'Tis serious, but recovery IS possible with proper support!",
+                "💔 The Oracle heareth thy struggles, weary one. Burnout is real and valid. I BESEECH thee - reach out for professional support this very day!"
             ]
         }
         
@@ -302,9 +302,9 @@ class BurnoutAdvisor:
     def _get_follow_up(self, level: BurnoutLevel) -> str:
         """Get follow-up recommendation"""
         follow_ups = {
-            BurnoutLevel.HEALTHY: "Consider journaling again in 1-2 weeks to track your wellbeing.",
-            BurnoutLevel.STRESSED: "I recommend journaling daily this week and checking in again in 3-5 days.",
-            BurnoutLevel.BURNOUT: "Please check in again tomorrow, and consider daily journaling as part of your recovery."
+            BurnoutLevel.HEALTHY: "The Oracle suggesteth thou journal again in a fortnight to track thy wellbeing! 📅",
+            BurnoutLevel.STRESSED: "The Oracle commandeth daily journaling this week! Return to consult me again in 3-5 days, young scholar. 📜",
+            BurnoutLevel.BURNOUT: "Prithee, return to the Oracle on the morrow! Consider daily journaling as part of thy recovery quest. 🙏"
         }
         return follow_ups.get(level, follow_ups[BurnoutLevel.HEALTHY])
     
@@ -312,19 +312,19 @@ class BurnoutAdvisor:
         """Get a random quick tip based on burnout level"""
         tips = {
             0: [
-                "💡 Tip: Share your positive strategies with a classmate who might be struggling!",
-                "💡 Tip: This is a great time to start a new healthy habit!",
-                "💡 Tip: Consider keeping a gratitude journal to maintain your positive mindset."
+                "💡 The Oracle's Wisdom: Share thy positive strategies with a fellow scholar who may be struggling!",
+                "💡 The Oracle's Wisdom: 'Tis an excellent time to embark upon a new virtuous habit!",
+                "💡 The Oracle's Wisdom: Consider keeping a gratitude journal to maintain thy positive spirit!"
             ],
             1: [
-                "💡 Tip: Take 5 deep breaths right now. Inhale for 4 counts, hold for 4, exhale for 6.",
-                "💡 Tip: Step outside for 5 minutes. Fresh air can reset your mind.",
-                "💡 Tip: Text a friend right now. Connection helps reduce stress."
+                "💡 The Oracle's Wisdom: Take 5 deep breaths RIGHT NOW. Inhale for 4 counts, hold for 4, exhale for 6. The Oracle commands it!",
+                "💡 The Oracle's Wisdom: Step outside for 5 minutes. Fresh air can reset thy weary mind!",
+                "💡 The Oracle's Wisdom: Send a raven to a friend right now! Connection helpeth reduce thy burdens."
             ],
             2: [
-                "💡 Tip: You don't have to figure this out alone. Reach out to someone today.",
-                "💡 Tip: One small step counts. Just focus on the next hour.",
-                "💡 Tip: Your worth is not defined by your grades or productivity."
+                "💡 The Oracle's Wisdom: Thou needn't solve this alone. Reach out to a trusted soul TODAY!",
+                "💡 The Oracle's Wisdom: One small step counteth greatly. Focus only upon the next hour, brave one.",
+                "💡 The Oracle's Wisdom: Thy worth is NOT defined by thy grades or productivity. Remember this truth!"
             ]
         }
         return random.choice(tips.get(label_id, tips[0]))

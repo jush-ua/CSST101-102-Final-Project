@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Burnout Oracle</title>
+    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=MedievalSharp&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="mystical-bg"></div>
+    <div class="floating-particles"></div>
+    
+    <div class="mirror-container">
+        <div class="mirror-frame">
+            <div class="corner-ornament top-left">✧</div>
+            <div class="corner-ornament top-right">✧</div>
+            <div class="corner-ornament bottom-left">✧</div>
+            <div class="corner-ornament bottom-right">✧</div>
+            
+            <div class="mirror-inner">
+                <div class="chat-header">
+                    <div class="oracle-icon">🔮</div>
+                    <h1>The Burnout Oracle</h1>
+                    <p class="subtitle">~ Ancient Keeper of Academic Wisdom ~</p>
+                    <div class="header-buttons">
+                        <button id="clear-btn" onclick="clearChats()" title="Clear the mirror's memory">⚗️ Clear Visions</button>
+                        <a href="credits.html" class="credits-btn" title="View the Guild of Creators">🏆 Credits</a>
+                    </div>
+                </div>
+                
+                <div class="mirror-surface">
+                    <div class="mirror-glow"></div>
+                    <div class="chat-box" id="chat-box">
+                        <div class="message bot-message">
+                            <div class="message-content">🔮 Greetings, weary scholar! I am the Burnout Oracle, ancient keeper of academic wisdom! Shareth with me what troubles thy mind. How hast thou been feeling about thy scholarly pursuits? (Prithee, write at least 10 characters)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input-container">
+                    <div class="spinner" id="spinner"></div>
+                    <div class="input-scroll">
+                        <textarea id="user-input" placeholder="Speak thy thoughts unto the Oracle..." rows="1"></textarea>
+                    </div>
+                    <button id="send-btn" title="Send thy message">
+                        <span>⚡</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js?v=5"></script>
+</body>
+</html>

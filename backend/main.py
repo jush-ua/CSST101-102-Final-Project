@@ -17,6 +17,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
 from pydantic import BaseModel, Field, validator
+from fastapi.staticfiles import StaticFiles
 
 # Add parent directory to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -48,6 +49,12 @@ ROASTS = {
         "🤐 What is this, a vow of silence?! The Oracle ain't got time for thy shy act!",
         "👻 Hello?! Anyone home?! Thy message is emptier than a peasant's coin purse!",
         "🦗 *crickets* ...The Oracle heareth NOTHING! Art thou a ghost?!",
+    ],
+    "too_short": [
+        "🦎 What is this, a message for ANTS?! The Oracle demandeth at least 10 characters! Put some effort in, ye lazy scribe!",
+        "📝 Thy message is shorter than a goblin's attention span! Write MORE!",
+        "🐜 Even a trained flea could write more than THIS pitiful excuse for text!",
+        "✏️ Is thy quill broken?! That's barely a sentence fragment, ye illiterate buffoon!",
     ],
     "special_chars": [
         "🤡 What manner of cryptic runes art these?! Thy keyboard vomit offends the Oracle! Write like a proper scholar, not a cat walking on keys! 🐱⌨️",
@@ -158,7 +165,6 @@ class JournalEntry(BaseModel):
     """Schema for a journal entry input"""
     text: str = Field(
         ..., 
-        min_length=10, 
         max_length=5000,
         description="The journal entry text to analyze",
         example="I've been feeling overwhelmed with assignments lately and can't seem to catch up."
@@ -170,6 +176,10 @@ class JournalEntry(BaseModel):
             raise ValueError(get_roast("empty"))
         
         text = v.strip()
+        
+        # Check minimum length
+        if len(text) < 10:
+            raise ValueError(get_roast("too_short"))
         
         # Check for gibberish (too many special characters)
         special_char_ratio = sum(1 for c in text if not c.isalnum() and not c.isspace()) / len(text)
@@ -467,7 +477,7 @@ def check_model_loaded():
 # API ENDPOINTS
 # ============================================
 
-@app.get("/", tags=["General"])
+@app.get("/api", tags=["General"])
 async def root():
     """Root endpoint with API information"""
     return {
@@ -704,6 +714,18 @@ async def get_resources():
             "Mindfulness and relaxation techniques"
         ]
     }
+
+
+# ============================================
+# SERVE FRONTEND (must be after all API routes)
+# ============================================
+
+# Get the directory where main.py is located
+BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
+FRONTEND_DIR = os.path.join(os.path.dirname(BACKEND_DIR), "frontend")
+
+# Mount the frontend directory
+app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="frontend")
 
 
 # ============================================
